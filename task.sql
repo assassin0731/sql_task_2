@@ -29,7 +29,7 @@ BEGIN
 	LIMIT 1;
 	FOR curr_start, curr_end IN (SELECT * FROM Intervals ORDER BY "StartDateTime", "EndDateTime")
 	LOOP
-		IF prev_end > curr_start THEN 
+		IF prev_end >= curr_start THEN 
 			IF curr_end > prev_end THEN
 				prev_end := curr_end;
 			END IF;
